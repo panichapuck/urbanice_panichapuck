@@ -7,7 +7,7 @@ asm1Router.post('/mail', (req, res) => {
     let from = req.body.from || 'good0896863529@gmail.com'
     let to = req.body.to
     let subject = req.body.subject
-    let message = req.body.message
+    let content = req.body.message
 
     const options = {
         'method': 'POST',
@@ -21,11 +21,11 @@ asm1Router.post('/mail', (req, res) => {
             "from": { "email": from }, 
             "subject": subject, 
             "content": [
-                { "type": "text/plain", "message": message }
+                { "type": "text/plain", "value": content }
             ] 
         })
+
     };
-    
     request(options, function (error, response) {
         if (error) {
             res.status(400).json({
