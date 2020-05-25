@@ -8,20 +8,6 @@ asm1Router.post('/mail', (req, res) => {
     let subject = req.body.subject
     let content = req.body.content
 
-    // let message = req.body.message
-
-    // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-    // const msg = {
-    //     to: from,
-    //     from: to,
-    //     subject: 'Sending with Twilio SendGrid is Fun',
-    //     text: 'and easy to do anywhere, even with Node.js'
-    // };
-
-    // sgMail.send(msg).catch(error => {
-    //     console.log("sgmail error",error)
-    // });
-
     const request = require('request');
     const options = {
         'method': 'POST',
